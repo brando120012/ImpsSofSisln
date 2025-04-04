@@ -1,0 +1,20 @@
+/*CREATE TABLE Materias(
+    id INT PRIMARY KEY,
+    nombre VARCHAR(30),
+    alumno VARCHAR(30),
+    grado VARCHAR(10),
+    calificacion INT
+);*/
+
+INSERT INTO Materias (id, nombre, alumno, grado, calificacion) VALUES
+(1, 'Pe_Mat_II', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(2, 'Socio_Emo_II', 'Brandon Ismael Ramirez Morales', '2°I', 7),
+(3, 'Con_Energia', 'Brandon Ismael Ramirez Morales', '2°I', 9),
+(4, 'DSdSI', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(5, 'CSdSI', 'Brandon Ismael Ramirez Morales', '2°I', 7),
+(6, 'ISdSI', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(7, 'Ingles', 'Brandon Ismael Ramirez Morales', '2°I', 9),
+(8, 'Lengua y comunicacion', 'Brandon Ismael Ramirez Morales', '2°I', 10),
+(9, 'Arte', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(10, 'Ciencia_Sociales_II', 'Brandon Ismael Ramirez Morales', '2°I', 9);
+;
