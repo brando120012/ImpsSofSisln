@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/CompuAula 03/Downloads/SQLite/SQLite.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="761"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Materias" custom_title="0" dock_id="1" table="4,8:mainMaterias"/><dock_state state="000000ff00000000fd0000000100000002000002480000020cfc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000002480000012300ffffff000002480000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Materias" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="35"/><column index="2" value="175"/><column index="3" value="41"/><column index="4" value="70"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Materias (
+    id INTEGER PRIMARY KEY,
+    nombre TEXT NOT NULL,
+    grado TEXT NOT NULL,
+    calificacion REAL NOT NULL
+);
+
+INSERT INTO Materias (id, nombre, grado, calificacion) VALUES
+(1, 'Pe_Mat_II', '2°I', 8.5),
+(2, 'Socio_Emo_II', '2°I', 7.8),
+(3, 'Con_Energia', '2°I', 9.2),
+(4, 'DSdSI', '2°I', 8.0),
+(5, 'CSdSI', '2°I', 7.5),
+(6, 'ISdSI', '2°I', 8.9),
+(7, 'Ingles', '2°I', 9.5),
+(8, 'Lengua y comunicacion', '2°I', 10.0),
+(9, 'Arte', '2°I', 8.7),
+(10, 'Ciencia_Sociales_II', '2°I', 9.0);
+
+	
+	</sql><sql name="SQL 2">
+CREATE TABLE Materias(
+    id INT PRIMARY KEY,
+    nombre VARCHAR(30),
+    alumno VARCHAR(30),
+    grado VARCHAR(10),
+    calificacion INT
+);
+
+INSERT INTO Materias (id, nombre, alumno, grado, calificacion) VALUES
+(1, 'Pe_Mat_II', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(2, 'Socio_Emo_II', 'Brandon Ismael Ramirez Morales', '2°I', 7),
+(3, 'Con_Energia', 'Brandon Ismael Ramirez Morales', '2°I', 9),
+(4, 'DSdSI', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(5, 'CSdSI', 'Brandon Ismael Ramirez Morales', '2°I', 7),
+(6, 'ISdSI', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(7, 'Ingles', 'Brandon Ismael Ramirez Morales', '2°I', 9),
+(8, 'Lengua y comunicacion', 'Brandon Ismael Ramirez Morales', '2°I', 10),
+(9, 'Arte', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(10, 'Ciencia_Sociales_II', 'Brandon Ismael Ramirez Morales', '2°I', 9);
+;</sql><sql name="SQL 3">/*CREATE TABLE Materias(
+    id INT PRIMARY KEY,
+    nombre VARCHAR(30),
+    alumno VARCHAR(30),
+    grado VARCHAR(10),
+    calificacion INT
+);*/
+
+INSERT INTO Materias (id, nombre, alumno, grado, calificacion) VALUES
+(1, 'Pe_Mat_II', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(2, 'Socio_Emo_II', 'Brandon Ismael Ramirez Morales', '2°I', 7),
+(3, 'Con_Energia', 'Brandon Ismael Ramirez Morales', '2°I', 9),
+(4, 'DSdSI', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(5, 'CSdSI', 'Brandon Ismael Ramirez Morales', '2°I', 7),
+(6, 'ISdSI', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(7, 'Ingles', 'Brandon Ismael Ramirez Morales', '2°I', 9),
+(8, 'Lengua y comunicacion', 'Brandon Ismael Ramirez Morales', '2°I', 10),
+(9, 'Arte', 'Brandon Ismael Ramirez Morales', '2°I', 8),
+(10, 'Ciencia_Sociales_II', 'Brandon Ismael Ramirez Morales', '2°I', 9);
+;</sql><current_tab id="2"/></tab_sql></sqlb_project>
