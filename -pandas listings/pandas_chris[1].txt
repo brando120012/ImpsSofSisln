@@ -1,0 +1,59 @@
+Encontrar todas las vistas hechas por Chris entre 2024-2024
+por mes.
+
+Usando listings.csv y pandas.
+
+
+
+from datetime import datetime
+import pandas as pd
+
+# ----------------------------------------
+# Parte 1: Calcular días vividos
+# ----------------------------------------
+dia_nac = 6
+mes_nac = 3   # Marzo
+año_nac = 1987
+
+dia_hoy = 5
+mes_hoy = 2   # Febrero
+año_actual = 2025
+
+fecha_nacimiento = datetime(año_nac, mes_nac, dia_nac)
+fecha_actual = datetime(año_actual, mes_hoy, dia_hoy)
+
+dias_vividos = (fecha_actual - fecha_nacimiento).days
+print(f"Has vivido {dias_vividos} días.")
+# ----------------------------------------
+
+# ----------------------------------------
+# Parte 2: Procesar el CSV para las vistas de Chris (2020-2024) y sumar reviews_per_month
+# ----------------------------------------
+# Se asume que 'listings.csv' contiene las columnas:
+# "last_review", "reviews_per_month" y "host_name"
+df = pd.read_csv("listings.csv")
+
+# Convertir la columna 'last_review' a datetime (se ignoran valores erróneos)
+df["last_review"] = pd.to_datetime(df["last_review"], errors="coerce")
+
+# Filtrar registros donde el host sea "Chris" y la fecha de la última review esté entre 2020 y 2024
+filtro = (
+    (df["host_name"] == "Chris") &
+    (df["last_review"].dt.year >= 2020) &
+    (df["last_review"].dt.year <= 2024)
+)
+df_filtrado = df[filtro].copy()
+
+# Crear una columna 'year_month' en formato "AAAA-MM"
+df_filtrado["year_month"] = df_filtrado["last_review"].dt.to_period("M")
+
+# Agrupar por 'year_month' y sumar la columna 'reviews_per_month'
+resultados = df_filtrado.groupby("year_month")["reviews_per_month"].sum().reset_index()
+print("Sumatoria de 'reviews_per_month' por mes para las vistas de Chris (2020-2024):")
+print(resultados)
+
+# ----------------------------------------
+# Parte 3: Calcular la sumatoria total de reviews_per_month en el período
+# ----------------------------------------
+total_reviews = resultados["reviews_per_month"].sum()
+print("Total completado de 'reviews_per_month' (suma de todos los meses):", total_reviews)
