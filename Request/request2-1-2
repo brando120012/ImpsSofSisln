@@ -1,0 +1,18 @@
+import requests
+import shutil
+
+url = 'https://es.wikipedia.org/wiki/Parque_Jur%C3%A1sico_(novela)'
+
+# Solicitar al usuario que ingrese el nombre del archivo
+file_name = input("Fred_Wierum_Velociraptor.png")
+
+# Hacer una solicitud GET a la URL
+res = requests.get(url, stream=True)
+
+# Verificar si la solicitud fue exitosa
+if res.status_code == 200:
+    with open(file_name, 'wb') as f:  # Abrir el archivo en modo de escritura binaria
+        shutil.copyfileobj(res.raw, f)  # Copiar el contenido de la respuesta al archivo
+    print('Imagen descargando correctamente como', file_name)
+else:
+    print('No se encontró la imagen')
